@@ -118,5 +118,6 @@ export const getTransactionMethods = <
 };
 
 export const getTagFromDomain = (domain: string) => {
-  return keccak256(toUtf8Bytes(domain)).slice(2, 10);
+  if (domain) return keccak256(toUtf8Bytes(domain)).slice(2, 10);
+  return '';
 };
